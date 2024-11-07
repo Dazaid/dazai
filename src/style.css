@@ -1,0 +1,60 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: black;
+    color: white;
+}
+.App {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    text-shadow: 0 0 10px #fff, 0 0 1px #fff, 0 0 1px #fff, 0 0 1px rgb(255, 0, 0), 0 0 100px rgb(255, 0, 0), 0 0 100px rgb(255, 0, 0), 0 0 100px rgb(255, 0, 0), 0 0 150px rgb(255, 0, 0);
+}
+/* Para la animación de parpadeo individual */
+.blinking-text {
+  display: inline-block;
+  animation: blink 2s infinite;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 0;
+  }
+}
+
+/* Para los puntos que se cargan en un bucle */
+.dots::after {
+  position: absolute;
+  content: '';
+  animation: dots 1.5s steps(3, end) infinite;
+}
+
+@keyframes dots {
+  0% {
+    content: '';
+  }
+  33% {
+    content: '.';
+  }
+  66% {
+    content: '..';
+  }
+  100% {
+    content: '...';
+  }
+}
